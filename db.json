@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "moe",
+      "last_name": "smith",
+      "email": "string@email.com"
+    },
+    {
+      "id": 2,
+      "first_name": "mike",
+      "last_name": "smith",
+      "email": "doe1@email.com"
+    },
+    {
+      "first_name": "donald",
+      "last_name": "trump",
+      "email": "emailer@this.com",
+      "id": 4
+    },
+    {
+      "first_name": "olie",
+      "last_name": "ome",
+      "email": "mdsd2df@dssc.com",
+      "id": 5
+    },
+    {
+      "first_name": "omari",
+      "last_name": "idshi",
+      "email": "bubus@sfs.com",
+      "id": 6
+    },
+    {
+      "first_name": "wahicdn",
+      "last_name": "ijjdi",
+      "email": "mmni@wf.com",
+      "id": 7
+    },
+    {
+      "first_name": "imk",
+      "last_name": "mkm",
+      "email": "km@dcs.com",
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<div >
+
+  <pre> {{ formConfig | json}}  </pre>
+    <!-- <form  style="margin-top: 30px;"
+    [formGroup]="form">
+    
+    <div class="form-group">
+      <label>
+        <b>first name</b>
+        <input 
+          type="text" 
+          formControlName="first_name"
+          placeholder="enter first name"
+          class="form-control"
+          [class.error]="nameControlInvalid">
+        <div
+  
+          *ngIf="nameControlInvalid">
+          <p>urequired</p>
+        </div>
+      </label>
+    </div>
+    
+    <div class="form-group">
+      <label>
+        <b>last name</b>
+        <input 
+          type="text" 
+          formControlName="last_name"
+          placeholder="enter last name"
+         class="form-control"
+          [class.error]="nameControlInvalid">
+        <div
+  
+          *ngIf="nameControlInvalid">
+          <p>required</p>
+        </div>
+      </label>
+      </div>
+  
+  
+      <div class="form-group">
+      <label>
+        <b>email</b>
+        <input 
+          type="text" 
+          formControlName="email"
+          placeholder="email"
+          class="form-control"
+          [class.error]="nameControlInvalid">
+        <div
+  
+          *ngIf="nameControlInvalid">
+          <p>required</p>
+        </div>
+      </label>
+      </div>
+  
+  
+      
+   
+  
+      <div class="">
+        <button
+          type="button"
+          class="btn btn__ok"
+          *ngIf="rightContent == 'CreateForm'"
+          (click)="createUser(form)">
+          Create user
+        </button>
+  
+        <button
+          type="button"
+          class="btn btn__ok"
+          *ngIf="rightContent == 'UpdateForm'"
+          (click)="updateUser(form)">
+          Save changes
+        </button>
+  
+        <button
+          type="button"
+          class="btn btn__warning"
+          *ngIf="rightContent == 'UpdateForm'"
+          (click)="removeUser(form)">
+          Delete user
+        </button>
+      </div>
+  
+    </form> -->
+  </div>
+  

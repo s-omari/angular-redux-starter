@@ -1,0 +1,44 @@
+      <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th *ngFor="let column of columns">
+                        {{column}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr 
+                    *ngFor="let entity of (entities | async)" 
+                    (click)="selectEntity(entity)"
+                    [class.selected]="entity?.id == selectedEntityId" >
+                        <td scope="row"> {{ entity.id }} </td>
+                        <td *ngFor="let column of columns">
+                                {{entity[column]}}
+                        </td>                
+                    </tr>
+            </tbody>
+        </table>
+
+
+<!-- 
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr 
+        *ngFor="let entity of (entities | async)" 
+        (click)="selectEntity(entity)"
+        [class.selected]="entity?.id == selectedEntityId" >
+            <th scope="row"> {{ entity.id }} </th>
+            <td>{{ entity.first_name+' '+entity.last_name }}</td>
+            <td>{{ entity.email }}</td>
+        </tr>
+    </tbody>
+</table> -->

@@ -1,0 +1,47 @@
+<div class="container-fluid  h-100">
+
+  <div class="row h-100 align-items-stretch ">
+
+    <div id="Left" class="h-100 col float-left" 
+    [hidden]="!(showLeft$ | async)" 
+    [class.expand-sidebar]="(leftExpanded$ | async)"
+    [class.shrink-sidebar]="!(leftExpanded$ | async)">
+      
+
+      <div class="float-right toggles">
+        <span *ngIf="!(leftExpanded$ | async) && (showLeft$ | async) " 
+        class="float-left" (click)="onExpandLeft()">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </span>
+        <span *ngIf="(leftExpanded$ | async)" 
+        class="float-left" (click)="onShrinkLeft()">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+      </div>
+
+
+      <div style="clear:both"></div>
+
+
+      <side-menu 
+      [items]="menuItems" 
+      [expanded]="(leftExpanded$ | async)"></side-menu>
+      
+    </div>
+
+
+
+
+
+
+    <div class=" h-100  float-left col" >
+        <router-outlet></router-outlet>
+    </div>
+
+
+
+  </div>
+
+
+
+</div>

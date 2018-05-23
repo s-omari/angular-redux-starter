@@ -1,0 +1,28 @@
+
+<ul class="sidebar-nav">
+
+    <li  *ngFor="let item of items" class="item"  >        
+      <a 
+      [routerLink]="[item.route]"
+      [placement]="!expanded ? 'right' : null"
+      [ngbTooltip]="!expanded ? item.title : null">
+      <i  class="{{item.icon}} sidenav-icon" ></i>
+      <p  *ngIf="expanded" class="sidenav-text">{{item.title}}</p>
+      </a>
+
+<ul *ngIf="item.children && expanded ">
+    <li  *ngFor="let child of item.children" class="item"  >        
+        <a 
+        [routerLink]="[child.route]"
+        [placement]="!expanded ? 'right' : null"
+        [ngbTooltip]="!expanded ? child.title : null">
+        <p  *ngIf="expanded" class="sidenav-text">{{child.title}}</p>
+        </a>
+      </li> 
+
+</ul>
+
+    </li> 
+
+</ul>
+

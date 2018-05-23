@@ -1,0 +1,25 @@
+<div class="d-flex flex-column h-100">
+    <header > 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <button class="btn left-toggle"
+          #showLeft
+          value="{{showLeft$ | async}}" 
+          (click)="onToggleLeft(showLeft.value)"><i class="fas fa-bars"></i></button>
+        
+          <a class="navbar-brand" routerLink="/">Angular Redux Starter</a>        
+          
+        
+        </nav>
+      </header>
+
+      <div class="h-100">
+          <router-outlet></router-outlet>
+
+      </div>
+
+
+  <footer class="fixed-bottom">
+      <small>Angular Redux Starter</small>
+    </footer>
+
+  </div>

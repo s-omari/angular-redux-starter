@@ -1,0 +1,209 @@
+
+      <div class="row h-100">
+          <div style="background: #CFD8DC;" 
+          class="float-left h-100" 
+          [hidden]="!(showCenter$ | async)" 
+          [class.col-8]="!(centerExpanded$ | async)"
+          [class.col-12]="(centerExpanded$ | async)">
+  
+  
+  
+          
+  
+      
+  
+            <div class="card col-6" style=" margin-top:15px; margin-top:15px;">
+              <b> Layout State </b>
+              <p>
+                      rightExpanded: {{rightExpanded$ | async}}  <br/>
+                      showRight: {{showRight$ | async}}<br/>
+                      centerExpanded: {{centerExpanded$ | async}}<br/>
+                      showCenter: {{showCenter$ | async}}<br/>
+                      rightContent: {{rightContent$ | async}}<br/>
+                      showLeft: {{showLeft$ | async}}<br/>
+                      leftExpanded: {{leftExpanded$ | async}} <br/>
+              </p>
+  
+            </div>
+  
+  
+                <div class="">
+                  <button type="button" class="btn btn-info" (click)="onShrinkRight()" *ngIf="!(showRight$ | async)">open right</button>
+                </div>
+      
+  
+  
+          </div>
+  
+          <div id="Right" class="float-left h-100" 
+          [hidden]="!(showRight$ | async)" 
+          [class.col-4]="!(rightExpanded$ | async)" 
+          [class.col-12]="(rightExpanded$ | async)">
+  
+            <div class="toggles">
+  
+  
+              <span class="float-right" (click)="onCloseRight()">
+                <i class="fas fa-times close-right"></i>
+              </span>
+  
+              <span *ngIf="!(rightExpanded$ | async)" class="expand-right float-left" (click)="onExpandRight()">
+                <i class="fas fa-expand-arrows-alt"></i>
+              </span>
+  
+              <span *ngIf="(rightExpanded$ | async)" class="shrink-right float-left" (click)="onShrinkRight()">
+                <i class="fas fa-compress"></i>
+              </span>
+  
+              <div class="clear-both" style="clear:both"></div>
+            </div>
+  
+  
+          </div>
+  
+  
+  
+          
+        </div>
+
+
+<!-- <div class="container-fluid  h-100">
+
+  <div class="row h-100 align-items-stretch ">
+
+    <div id="Left" class="h-100 col float-left" 
+    [hidden]="!(showLeft$ | async)" 
+    [class.expand-sidebar]="(leftExpanded$ | async)"
+    [class.shrink-sidebar]="!(leftExpanded$ | async)">
+      
+
+      <div class="float-right toggles">
+        <span *ngIf="!(leftExpanded$ | async) && (showLeft$ | async) " 
+        class="float-left" (click)="onExpandLeft()">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </span>
+        <span *ngIf="(leftExpanded$ | async)" 
+        class="float-left" (click)="onShrinkLeft()">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+        
+      </div>
+
+
+      <div style="clear:both"></div>
+
+
+
+      <ul class="sidebar-nav">
+        <li> 
+            <a 
+
+            [routerLink]="['/admin/users']"
+
+            [placement]="!(leftExpanded$ | async) ? 'right' : null"
+            [ngbTooltip]="!(leftExpanded$ | async) ? 'Users crud' : null">
+                <i class="fas fa-users sidenav-icon" >
+              </i>
+                <p  *ngIf="(leftExpanded$ | async)" class="sidenav-text">Users Crud</p>
+
+                
+             </a>
+        </li>
+        <li>
+            <a href=""
+            [placement]="!(leftExpanded$ | async) ? 'right' : null"
+            [ngbTooltip]="!(leftExpanded$ | async) ? 'Database' : null">
+                <i class="fas fa-database sidenav-icon"></i>
+                <p *ngIf="(leftExpanded$ | async)"  class="sidenav-text">database</p>
+             </a>
+        </li>
+        <li>
+            <a href=""
+            [placement]="!(leftExpanded$ | async) ? 'right' : null"
+            [ngbTooltip]="!(leftExpanded$ | async) ? 'Messages' : null">
+                <i class="fas fa-envelope sidenav-icon"></i>
+                <p *ngIf="(leftExpanded$ | async)"  class="sidenav-text">Messages</p>
+             </a>
+        </li>
+
+    </ul>
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class=" h-100  float-left col" >
+      <div class="row h-100">
+        <div style="background: #CFD8DC;" class="float-left h-100" [hidden]="!(showCenter$ | async)" [class.col-8]="!(centerExpanded$ | async)"
+          [class.col-12]="(centerExpanded$ | async)">
+
+
+
+        
+
+          <router-outlet></router-outlet>
+
+          <div class="card col-6" style=" margin-top:15px; margin-top:15px;">
+            <b> Layout State </b>
+            <p>
+                    rightExpanded: {{rightExpanded$ | async}}  <br/>
+                    showRight: {{showRight$ | async}}<br/>
+                    centerExpanded: {{centerExpanded$ | async}}<br/>
+                    showCenter: {{showCenter$ | async}}<br/>
+                    rightContent: {{rightContent$ | async}}<br/>
+                    showLeft: {{showLeft$ | async}}<br/>
+                    leftExpanded: {{leftExpanded$ | async}} <br/>
+            </p>
+
+          </div>
+
+
+              <div class="">
+                <button type="button" class="btn btn-info" (click)="onShrinkRight()" *ngIf="!(showRight$ | async)">open right</button>
+              </div>
+    
+
+
+        </div>
+
+        <div id="Right" class="float-left h-100" 
+        [hidden]="!(showRight$ | async)" 
+        [class.col-4]="!(rightExpanded$ | async)" 
+        [class.col-12]="(rightExpanded$ | async)">
+
+          <div class="toggles">
+
+
+            <span class="float-right" (click)="onCloseRight()">
+              <i class="fas fa-times close-right"></i>
+            </span>
+
+            <span *ngIf="!(rightExpanded$ | async)" class="expand-right float-left" (click)="onExpandRight()">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </span>
+
+            <span *ngIf="(rightExpanded$ | async)" class="shrink-right float-left" (click)="onShrinkRight()">
+              <i class="fas fa-compress"></i>
+            </span>
+
+            <div class="clear-both" style="clear:both"></div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+</div> -->
