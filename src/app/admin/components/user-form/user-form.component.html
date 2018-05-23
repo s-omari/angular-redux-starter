@@ -16,12 +16,7 @@
         placeholder="enter first name"
 
        class="form-control"
-        [class.error]="nameControlInvalid">
-      <div
-
-        *ngIf="nameControlInvalid">
-        <p>urequired</p>
-      </div>
+        >
     </label>
   </div>
   
@@ -33,12 +28,8 @@
         formControlName="last_name"
         placeholder="enter last name"
        class="form-control"
-        [class.error]="nameControlInvalid">
-      <div
+        >
 
-        *ngIf="nameControlInvalid">
-        <p>required</p>
-      </div>
     </label>
     </div>
 
@@ -51,12 +42,8 @@
         formControlName="email"
         placeholder="email"
         class="form-control"
-        [class.error]="nameControlInvalid">
-      <div
+        >
 
-        *ngIf="nameControlInvalid">
-        <p>required</p>
-      </div>
     </label>
     </div>
 
