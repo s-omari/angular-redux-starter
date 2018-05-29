@@ -38,3 +38,19 @@
     }
   ]
 }
+
+
+{
+  'categories': [
+    {
+      "id": 1,
+      "title": "services",
+      
+    },
+    {
+      "id": 2,
+      "title": "components",
+      
+    },
+  ]
+}
