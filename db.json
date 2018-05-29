@@ -41,15 +41,17 @@
 
 
 {
-  'categories': [
+  "categories": [
     {
       "id": 1,
       "title": "services",
+      "description": "services provided by bla"
       
     },
     {
       "id": 2,
       "title": "components",
+      "description": "the best components provided by bla"
       
     },
   ]
